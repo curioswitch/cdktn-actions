@@ -53,21 +53,21 @@ jobs:
       has-diffs: ${{ steps.save.outputs.has-diffs }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: package.json
 
-      - uses: google-github-actions/auth@v2
+      - uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3
         with:
           workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
           project_id: ${{ inputs.gcp_project_id }}
           service_account: ${{ inputs.service_account_plan || format('terraform-viewer@{0}.iam.gserviceaccount.com', inputs.gcp_project_id) }}
 
-      - uses: google-github-actions/setup-gcloud@v2
+      - uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3
 
-      - uses: opentofu/setup-opentofu@v1
+      - uses: opentofu/setup-opentofu@fc711fa910b93cba0f3fbecaafc9f42fd0c411cb # v2
 
       - run: bun install
 
@@ -100,21 +100,21 @@ jobs:
     environment: ${{ inputs.env_apply }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: package.json
 
-      - uses: google-github-actions/auth@v2
+      - uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3
         with:
           workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
           project_id: ${{ inputs.gcp_project_id }}
           service_account: ${{ inputs.service_account_apply || format('terraform-admin@{0}.iam.gserviceaccount.com', inputs.gcp_project_id) }}
 
-      - uses: google-github-actions/setup-gcloud@v2
+      - uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3
 
-      - uses: opentofu/setup-opentofu@v1
+      - uses: opentofu/setup-opentofu@fc711fa910b93cba0f3fbecaafc9f42fd0c411cb # v2
 
       - run: bun install
 
