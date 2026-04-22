@@ -1,11 +1,12 @@
-# cdtktf-actions
+# cdtktn-actions
 
-Reusable workflows to use GitHub actions to manage CDK for Terraform infrastructure using CI/CD and GCP.
+Reusable workflows to use GitHub actions to manage CDK Terrain
+infrastructure using CI/CD and GCP.
 
 ## Setup
 
 Using the workflows requires some configuration of GCP and the GitHub repository containing the CDK code.
-These can be automatically provisioned using [cdktf-constructs](https://github.com/curioswitch/cdktf-constructs).
+These can be automatically provisioned using [cdktn-constructs](https://github.com/curioswitch/cdktn-constructs).
 
 Manual configuration will require for...
 
