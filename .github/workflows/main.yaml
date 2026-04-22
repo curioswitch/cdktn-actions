@@ -71,7 +71,7 @@ jobs:
 
       - run: bun install
 
-      - run: bun run cdktf synth
+      - run: bun run cdktn synth
         env:
           TERRAFORM_BINARY_NAME: tofu
 
